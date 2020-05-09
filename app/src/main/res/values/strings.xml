@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Atividade_FireStore</string>
+    <string-array name="prioridade">
+        <item>ALTA</item>
+        <item>MEDIA</item>
+        <item>BAIXA</item>
+    </string-array>
+</resources>
