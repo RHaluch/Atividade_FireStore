@@ -16,6 +16,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import java.util.Date;
+import java.util.Calendar;
 
 public class RegistrarTarefa extends AppCompatActivity {
 
@@ -47,7 +49,8 @@ public class RegistrarTarefa extends AppCompatActivity {
         String titulo = editTitulo.getText().toString();
         String prioridade = spinPrioridade.getSelectedItem().toString();
         String categoria = editCategoria.getText().toString();
-        Tarefa tarefa = new Tarefa(titulo,categoria,prioridade);
+        Date dataCriacao = Calendar.getInstance().getTime();
+        Tarefa tarefa = new Tarefa(titulo,categoria,prioridade, dataCriacao);
 
         db.collection("usuarios").document(user.getEmail()).collection("tarefas").add(tarefa).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
